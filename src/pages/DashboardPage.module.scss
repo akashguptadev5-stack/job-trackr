@@ -1,0 +1,94 @@
+@use '../styles/variables' as *;
+
+.wrap { min-height: 100vh; background: $bg-base; display: flex; flex-direction: column; position: relative; }
+
+.topbar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px;
+  border-bottom: 1px solid $border-subtle;
+  background: rgba(255,255,255,0.02);
+  position: sticky; top: 0; z-index: 40;
+}
+
+.logo { display: flex; align-items: center; gap: 8px; }
+.logoIcon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: linear-gradient(135deg, $purple-600, $purple-700);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: #fff;
+}
+.logoText { font-size: 14px; font-weight: 700; color: $text-primary; }
+
+.nav { flex: 1; padding-left: 20px; }
+.navItem { font-size: 13px; font-weight: 600; color: $purple-400; }
+
+.right { display: flex; align-items: center; gap: 10px; }
+
+.addBtn {
+  display: flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, $purple-600, $purple-700);
+  border: none; border-radius: 8px; padding: 7px 14px;
+  font-size: 12px; font-weight: 600; color: #fff; cursor: pointer;
+  font-family: inherit; transition: $transition-fast;
+  &:hover { opacity: 0.9; }
+}
+
+.avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(135deg, $purple-600, $purple-700);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff;
+}
+
+.signOutBtn {
+  background: rgba(255,255,255,0.05); border: 1px solid $border-subtle;
+  border-radius: 6px; padding: 6px 12px; font-size: 11px;
+  font-weight: 600; color: $text-muted; cursor: pointer;
+  font-family: inherit; transition: $transition-fast;
+  &:hover { background: rgba(255,255,255,0.08); }
+}
+
+.body { display: flex; flex: 1; }
+
+.sidebar {
+  width: 48px; border-right: 1px solid $border-subtle;
+  padding: 10px 6px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.01);
+}
+
+.sideItem {
+  width: 34px; height: 34px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: $text-muted; font-size: 17px; cursor: pointer;
+  transition: $transition-fast;
+  &:hover { background: rgba(124,58,237,0.15); color: $purple-400; }
+  &.active { background: rgba(124,58,237,0.2); color: $purple-400; }
+}
+
+.main { flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.stat {
+  background: $bg-card; border: 1px solid $border-subtle;
+  border-radius: $radius-md; padding: 10px 12px;
+}
+.statVal   { font-size: 22px; font-weight: 700; color: $text-primary; letter-spacing: -.5px; }
+.statLabel { font-size: 10px; color: $text-muted; margin-top: 1px; font-weight: 500; }
+
+.filters { display: flex; gap: 8px; align-items: center; }
+.searchWrap {
+  flex: 1; display: flex; align-items: center; gap: 8px;
+  background: $bg-card; border: 1px solid $border-subtle;
+  border-radius: $radius-sm; padding: 7px 12px;
+  font-size: 14px; color: $text-muted;
+}
+.search {
+  flex: 1; background: transparent; border: none; outline: none;
+  font-size: 12px; color: $text-primary; font-family: inherit;
+  &::placeholder { color: $text-faint; }
+}
+
+.kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; flex: 1; }
+
+.loading { color: $text-muted; font-size: 14px; text-align: center; padding: 40px; }

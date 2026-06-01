@@ -1,0 +1,78 @@
+@use '../../styles/variables' as *;
+
+.wrap   { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.header { display: flex; align-items: flex-end; justify-content: space-between; }
+.title  { font-size: 18px; font-weight: 700; color: $text-primary; letter-spacing: -.4px; }
+.sub    { font-size: 12px; color: $text-muted; margin-top: 2px; }
+
+.resetBtn {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: $radius-sm; padding: 7px 14px; font-size: 12px;
+  font-weight: 600; color: $text-secondary; cursor: pointer; font-family: inherit;
+  transition: $transition-fast;
+  &:hover { background: rgba(255,255,255,0.08); }
+}
+
+.scoreCard {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: $radius-lg; padding: $space-lg;
+  display: flex; align-items: center; gap: $space-lg;
+}
+
+.ring     { position: relative; width: 90px; height: 90px; flex-shrink: 0; }
+.ringInner {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.ringNum   { font-size: 24px; font-weight: 800; letter-spacing: -1px; }
+.ringLabel { font-size: 9px; color: $text-muted; font-weight: 600; }
+
+.scoreTitle { font-size: 14px; font-weight: 700; color: $text-primary; margin-bottom: 6px; line-height: 1.4; }
+.badgeRow   { display: flex; flex-wrap: wrap; gap: 5px; }
+.badge      { font-size: 10px; padding: 3px 8px; border-radius: 10px; font-weight: 700; }
+.found      { background: rgba(16,185,129,0.15); color: $green-400; }
+.missing    { background: rgba(239,68,68,0.1);   color: $red-400;   }
+
+.twoCol  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.section {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: $radius-md; padding: 12px;
+}
+.sectionTitle {
+  font-size: 10px; font-weight: 700; color: $text-muted;
+  letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px;
+}
+
+.kwGrid   { display: flex; flex-wrap: wrap; gap: 5px; }
+.kw       { font-size: 10px; padding: 3px 8px; border-radius: 8px; font-weight: 600; }
+.kwFound  { background: rgba(16,185,129,0.12); color: $green-400; border: 1px solid rgba(16,185,129,0.2); }
+.kwMissing{ background: rgba(239,68,68,0.08);  color: $red-400;   border: 1px solid rgba(239,68,68,0.15); }
+
+.tabRow { display: flex; gap: 4px; margin-bottom: 10px; flex-wrap: wrap; }
+.tab {
+  padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: 600;
+  cursor: pointer; color: $text-muted; background: transparent;
+  border: 1px solid rgba(255,255,255,0.07); font-family: inherit;
+  transition: $transition-fast;
+  &:hover { color: $text-secondary; }
+}
+.tabActive { background: rgba(124,58,237,0.2); color: $purple-400; border-color: rgba(124,58,237,0.3); }
+
+.rewriteBox {
+  background: rgba(124,58,237,0.05); border: 1px solid rgba(124,58,237,0.15);
+  border-radius: $radius-sm; padding: 12px;
+}
+.rewriteLabel { font-size: 9px; font-weight: 700; color: $purple-600; letter-spacing: .06em; text-transform: uppercase; }
+.rewriteOld   { font-size: 12px; color: $text-faint; line-height: 1.6; margin-top: 4px; text-decoration: line-through; }
+.rewriteNew   { font-size: 12px; color: $purple-400; line-height: 1.6; margin-top: 4px; }
+
+.actionItem {
+  display: flex; gap: 10px; margin-bottom: 8px;
+  font-size: 12px; color: $text-secondary; line-height: 1.5;
+  p { flex: 1; }
+}
+.actionDot {
+  width: 5px; height: 5px; border-radius: 50%; background: $purple-600;
+  margin-top: 6px; flex-shrink: 0;
+}

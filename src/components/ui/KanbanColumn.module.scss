@@ -1,0 +1,43 @@
+@use '../../styles/variables' as *;
+
+.col {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid $border-subtle;
+  border-radius: $radius-lg;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 200px;
+  transition: $transition-fast;
+}
+
+.over {
+  border-color: rgba(52,211,153,0.4);
+  background: rgba(16,185,129,0.04);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.title { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.count {
+  font-size: 10px; background: rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 2px 7px; color: $text-muted; font-weight: 600;
+}
+
+.cards { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+.empty {
+  border: 2px dashed rgba(255,255,255,0.08);
+  border-radius: $radius-sm;
+  padding: 20px;
+  text-align: center;
+  font-size: 11px;
+  color: $text-faint;
+}

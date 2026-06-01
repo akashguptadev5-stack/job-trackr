@@ -1,0 +1,63 @@
+@use '../../styles/variables' as *;
+
+.card {
+  background: $bg-card;
+  border: 1px solid $border-subtle;
+  border-radius: $radius-md;
+  padding: 10px;
+  cursor: grab;
+  transition: $transition-fast;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  user-select: none;
+
+  &:hover {
+    border-color: $border-active;
+    background: $bg-card-hover;
+    transform: translateY(-1px);
+  }
+  &:active { cursor: grabbing; }
+}
+
+.dragging {
+  border-color: $purple-600;
+  background: rgba(124, 58, 237, 0.12);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+}
+
+.company { font-size: 12px; font-weight: 700; color: $text-primary; }
+.role    { font-size: 10px; color: $text-muted; margin-top: 1px; }
+
+.tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag  {
+  font-size: 9px; padding: 2px 6px; border-radius: 8px;
+  font-weight: 700;
+  background: rgba(124,58,237,0.2); color: $purple-400;
+}
+
+.matchBar { display: flex; flex-direction: column; gap: 2px; }
+.matchRow { display: flex; justify-content: space-between; }
+.matchLabel { font-size: 9px; color: $text-muted; }
+.matchPct   { font-size: 9px; font-weight: 700; color: $purple-400; }
+.barBg  { height: 3px; background: rgba(255,255,255,0.05); border-radius: 10px; }
+.barFill {
+  height: 3px; border-radius: 10px;
+  background: linear-gradient(90deg, $purple-600, $purple-400);
+  transition: width 0.4s ease;
+}
+
+.salary { font-size: 10px; color: $green-400; font-weight: 600; }
+
+.footer  { display: flex; justify-content: space-between; align-items: center; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.05); }
+.date    { font-size: 9px; color: $text-faint; }
+.actions { display: flex; gap: 3px; }
+.iconBtn {
+  width: 20px; height: 20px; border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 11px; color: $text-muted;
+  transition: $transition-fast;
+  &:hover { color: $purple-400; border-color: rgba(124,58,237,0.3); }
+}
