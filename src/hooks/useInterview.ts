@@ -45,7 +45,8 @@ export function useInterview() {
     abortRef.current = new AbortController();
 
     try {
-      const response = await authFetch('http://localhost:3001/api/ai/interview', {
+      const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const response = await authFetch(`${BASE_URL}/api/ai/interview`, {
         method: 'POST',
         body: JSON.stringify({ history, jobTitle, company, jobDescription, isOpening }),
         signal: abortRef.current.signal,

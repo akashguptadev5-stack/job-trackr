@@ -24,7 +24,8 @@ export function useAnalyser() {
     let accumulated = '';
 
     try {
-      const response = await authFetch('http://localhost:3001/api/ai/analyse', {
+      const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const response = await authFetch(`${BASE_URL}/api/ai/analyse`, {
         method: 'POST',
         body: JSON.stringify({ resumeText, jobDescription }),
         signal: abortRef.current.signal,
